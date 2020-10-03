@@ -2,8 +2,8 @@
   "name": "@plonk/react",
   "version": "0.0.1",
   "description": "React component library",
-  "main": "dist/umd/plonk.js",
-  "module": "dist/esm/index.js",
+  "main": "cjs/plonk.js",
+  "module": "esm/index.js",
   "repository": "",
   "author": "Jason Galea <jason@lecstor.com",
   "license": "MIT",
@@ -12,8 +12,9 @@
     "prepare": "yarn build"
   },
   "files": [
-    "dist/esm/*",
-    "dist/umd/*"
+    "cjs/*",
+    "esm/*",
+    "umd/*"
   ],
   "dependencies": {
     "@emotion/react": "^11.0.0-next.17",
