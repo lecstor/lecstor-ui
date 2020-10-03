@@ -1,0 +1,26 @@
+{
+  "name": "@plonk/react",
+  "version": "0.0.1",
+  "description": "React component library",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "repository": "",
+  "author": "Jason Galea <jason@lecstor.com",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.0.0-next.17",
+    "react-icons": "^3.11.0",
+    "styled-system": "^5.1.5"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-system": "^5.1.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.13",
+    "react-dom": ">= 16.13"
+  }
+}
