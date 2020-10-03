@@ -2,14 +2,19 @@
   "name": "@plonk/react",
   "version": "0.0.1",
   "description": "React component library",
-  "main": "dist/cjs/index.js",
+  "main": "dist/umd/plonk.js",
   "module": "dist/esm/index.js",
   "repository": "",
   "author": "Jason Galea <jason@lecstor.com",
   "license": "MIT",
   "scripts": {
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "prepare": "yarn build"
   },
+  "files": [
+    "dist/esm/*",
+    "dist/umd/*"
+  ],
   "dependencies": {
     "@emotion/react": "^11.0.0-next.17",
     "react-icons": "^3.11.0",

@@ -1,2 +1,5 @@
 es/
+package/
+.DS_Store
 tsconfig.tsbuildinfo
+*.tgz
