@@ -1,0 +1,13 @@
+{
+  "name": "@lecstor/ui-default-theme",
+  "version": "0.0.1",
+  "description": "Design System theme",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "repository": "",
+  "author": "Jason Galea <jason@lecstor.com",
+  "license": "MIT",
+  "files": [
+    "cjs/*"
+  ]
+}

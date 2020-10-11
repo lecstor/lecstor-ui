@@ -1,0 +1,23 @@
+export const textInput = {
+  defaultStyle: {
+    boxSizing: "border-box",
+    font: "inherit",
+    margin: 0,
+    overflow: "visible",
+    fontFamily: "body",
+    paddingY: 3,
+    paddingX: 5,
+    color: "text",
+    verticalAlign: "middle",
+    backgroundColor: "white",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "right 8px center",
+    borderColor: "border",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderRadius: 3,
+    fontSize: 2,
+    lineHeight: 2,
+    flex: "auto",
+  },
+};
