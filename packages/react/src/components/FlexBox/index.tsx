@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { FC } from 'react';
-import { flexbox, FlexboxProps as FlexboxSSProps } from 'styled-system';
+import { FC } from "react";
 
-import { Box, BoxProps } from '../Box';
+import { Box, BoxProps } from "../Box";
 
-export type FlexBoxProps = BoxProps & FlexboxSSProps;
+export type FlexBoxProps = BoxProps;
 
-export const FlexBox: FC<FlexBoxProps> = (props) => 
-    <Box css={flexbox(props)} {...props} />;
+export const FlexBox: FC<FlexBoxProps> = (props) => (
+  <Box display="flex" {...props} />
+);
