@@ -1,7 +1,12 @@
 {
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "jsx": "react"
+  },
   "references": [
-      { "path": "./packages/react" },
-      { "path": "./packages/utils" },
+    { "path": "./packages/react" },
+    { "path": "./packages/utils" },
+    { "path": "./packages/theme" },
   ],
   "files": []
 }

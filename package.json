@@ -1,23 +1,26 @@
 {
-  "name": "plonk",
+  "name": "lecstor-ui",
   "private": true,
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
     "@changesets/cli": "^2.6.5",
-    "jest": "^25.4.0",
+    "eslint": "^7.10.0",
+    "jest": "^26.4.2",
     "react": "^16.13.1",
-    "ts-jest": "^25.4.0",
-    "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "ts-jest": "^26.4.1",
+    "tslib": "^2.0.1",
+    "typescript": "^4.0.3"
   },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "build": "yarn tsc -b",
+    "build-all": "yarn tsc -b && yarn workspace @lecstor/ui-react build",
+    "build-react": "yarn workspace @lecstor/ui-react build",
     "test": "yarn jest",
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint --fix --ext .js,.ts,.tsx .",
     "verify": "yarn build && yarn test && yarn lint",
     "changeset": "changeset",
     "release": "yarn verify && changeset publish",
@@ -30,9 +33,17 @@
     "@storybook/addon-essentials": "^6.0.22",
     "@storybook/addon-links": "^6.0.22",
     "@storybook/react": "^6.0.22",
+    "@types/jest": "^26.0.14",
     "@types/react": "^16.9.50",
     "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
     "babel-loader": "^8.1.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.3",
+    "jest-emotion": "^10.0.32",
+    "prettier": "^2.1.2",
     "react-dom": "^16.13.1",
     "react-is": "^16.13.1"
   }

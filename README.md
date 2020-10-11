@@ -21,3 +21,13 @@ yarn add typescript -W
 ```
 
 https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+
+# TODO
+
+## Storybook - global or scoped to package?
+
+in `.storybook/preview.js` this doesn't feel right
+
+```
+import { DsProvider } from '../packages/react/src/theme';
+```

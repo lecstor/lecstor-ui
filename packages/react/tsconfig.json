@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
-    "outDir": "./es",
-    "rootDir": "./src",
+    "outDir": "./dist/es",
+    "rootDir": ".",
     "baseUrl": ".",
     "paths": {
         "utils": ["../utils"]
@@ -11,5 +11,5 @@
   "references": [
     { "path": "../utils" }
   ],
-  "exclude": ["es"]
+  "exclude": ["dist/es"]
 }

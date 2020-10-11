@@ -1,5 +1,5 @@
 {
-  "name": "@plonk/utils",
+  "name": "@lecstor/ui-utils",
   "version": "0.0.1",
   "description": "Utilities library",
   "main": "dist/cjs/index.js",

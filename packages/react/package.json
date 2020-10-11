@@ -1,9 +1,10 @@
 {
-  "name": "@plonk/react",
+  "name": "@lecstor/ui-react",
   "version": "0.0.1",
   "description": "React component library",
-  "main": "cjs/plonk.js",
+  "main": "cjs/index.js",
   "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "repository": "",
   "author": "Jason Galea <jason@lecstor.com",
   "license": "MIT",
@@ -17,19 +18,31 @@
     "umd/*"
   ],
   "dependencies": {
-    "@emotion/react": "^11.0.0-next.17",
+    "@emotion/is-prop-valid": "^0.8.8",
+    "@emotion/react": "^11.0.0-next.19",
+    "@lecstor/ui-default-theme": "0.0.1",
+    "@styled-system/css": "^5.1.5",
+    "lodash.get": "^4.4.2",
     "react-icons": "^3.11.0",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^12.1.7",
+    "@types/jest-axe": "^3.5.0",
+    "@types/lodash.get": "^4.4.6",
     "@types/react": "^16.9.50",
     "@types/react-dom": "^16.9.8",
     "@types/styled-system": "^5.1.10",
+    "@types/styled-system__css": "^5.0.14",
+    "jest-axe": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "rollup": "^2.28.2"
+    "rollup": "^2.28.2",
+    "rollup-plugin-dts": "^1.4.13"
   },
   "peerDependencies": {
     "react": ">= 16.13",
