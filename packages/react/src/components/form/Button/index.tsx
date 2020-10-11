@@ -1,54 +1,34 @@
-import React, { FC, ReactNode } from 'react';
+/** @jsx jsx */
+import { jsx } from "@emotion/react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 
-import { Box, BoxProps } from '../../Box';
+import { useThemePresets } from "../../../theme";
+
+import { Box, BoxProps } from "../../Box";
 
 export type ButtonProps = BoxProps & {
-  // size?: keyof Theme['buttons']['size'];
-  // variant?: keyof Theme['buttons']['variant'];
-  themeKey?: 'buttons' | 'iconButtons';
+  size?: string;
+  variant?: string;
+  themeKey?: "buttons" | "iconButtons";
   disabled?: boolean;
-  // groupPos?: keyof Theme['buttons']['groupPos'];
-  // children: React.ReactNode;
-  children?: ReactNode
-};
-
-// export type ButtonProps = Pick<
-//   React.ButtonHTMLAttributes<HTMLButtonElement>,
-//   'onClick'
-// > &
-//   Omit<
-//     AriaButtonProps,
-//     | 'backgroundColor'
-//     | 'onPressStart'
-//     | 'onPressEnd'
-//     | 'onPressChange'
-//     | 'onPressUp'
-//     | 'onKeyDown'
-//     | 'onKeyUp'
-//   > &
-//   BaseProps;
+  groupPos?: string;
+  children?: ReactNode;
+} & HTMLAttributes<HTMLButtonElement>;
 
 export const Button: FC<ButtonProps> = ({
-  // variant,
-  // size,
+  variant,
+  size,
   children,
-  disabled,
-  themeKey = 'buttons',
-  // groupPos,
+  themeKey = "buttons",
   ...props
 }) => {
-  // const presetStyles = useThemePresets(themeKey, {
-  //   variant,
-  //   size,
-  //   groupPos,
-  // });
+  const presetStyles = useThemePresets(themeKey, {
+    variant,
+    size,
+  });
 
   return (
-    <Box
-      as="button"
-      {...props}
-      // css={presetStyles}
-    >
+    <Box as="button" css={presetStyles} {...props}>
       {children}
     </Box>
   );

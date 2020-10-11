@@ -1,22 +1,17 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 
-import { Box, Button, FlexBox } from "../../";
+import { DsProvider } from '../../../theme';
+
+import { Box, Button, FlexBox, Layout } from "../../";
 
 import { FaBeer } from "../../icons";
 
 <Meta title="components/Buttons" component={Button}
-  decorators={[
-    Story => (
-      <Provider>
-        <Story />
-      </Provider>
-    ),
-  ]}
   argTypes={{
     variant: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "tertiary", "warning"],
+        options: ["primary", "secondary", "danger", "warning"],
       },
       defaultValue: "primary",
     },
@@ -35,15 +30,13 @@ import { FaBeer } from "../../icons";
 
 # Buttons
 
-Buttons execute an action, either in the background or foreground of an experience. Different button categories help guide users through certain actions. Buttons express what action will occur when the user clicks or touches it either by text, icon, or both. Additional meaning can be derived from the button style.
-
 <Canvas>
   <Story name="Preview">
 <FlexBox m={3} alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}>Default</Button>
   <Button m={2} size="md" variant="secondary"><FaBeer width="20px" height="20px" /> Medium Secondary</Button>
-  <Button m={2} size="sm" variant="tertiary">Small Tertiary</Button>
-  <Button m={2} disabled>Disabled</Button>
+  <Button m={2} size="sm" variant="warning">Small Warning</Button>
+  <Button m={2} disabled variant="danger">Disabled</Button>
   <Button m={2} themeKey="iconButtons"><FaBeer width="20px" height="20px" /></Button>
 </FlexBox>
   </Story>
@@ -51,45 +44,70 @@ Buttons execute an action, either in the background or foreground of an experien
 
 ## Variants
 
-Different button categories bring varying emphasis to potential user actions. This makes the page comprehensive while guiding the user through performing a task.
-
 <Canvas>
   <Story name="Variants">
 <FlexBox m={3} alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}>Default</Button>
-  <Button m={2} variant="warning">Warning</Button>
   <Button m={2} variant="secondary">Secondary</Button>
-  <Button m={2} variant="tertiary">Tertiary</Button>
+  <Button m={2} variant="warning">Warning</Button>
+  <Button m={2} variant="danger">Danger</Button>
 </FlexBox>
   </Story>
 </Canvas>
 
-### Primary
-
-Primary buttons are the single most important action that moves the task forward within a context and thus have the most emphasis placed upon them. There should only be one call to action in any given context. Primary buttons are recognized by their solid color, bold text labels, and must use one of the four elementary button styles: Info (blue), Success (green), Warning (orange), or Danger (red).
-
-Defining context depends on the hierarchy of information displayed on the screen, the motivated user flow, and the available tasks. As an example; Settings pages may have multiple equally important contexts, each requiring its own primary button to complete its task.
-
-### Secondary
-
-Secondary buttons represent supplementary actions that the user is motivated to take. The outlined styling places less emphasis on these buttons. Just like primary buttons, secondary buttons also require one of the four elementary button styles: Info (blue), Success (green), Warning (orange), or Danger (red).
-
-### Tertiary
-
-A tertiary button is the default button category. Tertiary buttons still have an outlined styling but cannot have one of the four elementary button styles. They are typically used for less important actions that are not promoted to the user.
-
 ## Sizes
-
-Depending on the interface buttons may either use the large, medium, or small size.
-
-The default button is large.
 
 <Canvas>
   <Story name="Sizes">
-<FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
-  <Button m={2}>Large</Button>
+<FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]} m={5}>
+  <Button m={2} size="lg">Large</Button>
   <Button m={2} size="md">Medium</Button>
   <Button m={2} size="sm">Small</Button>
+</FlexBox>
+<FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]} m={5}>
+  <Button m={2} size="sm">Small</Button>
+  <Box>
+  <Box fontSize="1" border="1px dotted red" fontFamily="Roboto" lineHeight={1}>
+    Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla. Magna cupidatat magna commodo commodo esse elit reprehenderit.
+  </Box>
+  </Box>
+</FlexBox>
+<FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]} m={5}>
+  <Button m={2} size="md">Medium</Button>
+  <Box>
+  <Box fontSize="1" border="1px dotted red" fontFamily="Roboto" lineHeight={1}>
+    Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla. Magna cupidatat magna commodo commodo esse elit reprehenderit. Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla.
+  </Box>
+  </Box>
+</FlexBox>
+<FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]} m={5}>
+  <Button m={2} size="md">Medium</Button>
+  <Box>
+  <Box fontSize="2" border="1px dotted red" fontFamily="Roboto" lineHeight={1}>
+    Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla.
+  </Box>
+  </Box>
+</FlexBox>
+<FlexBox alignItems="center" display={["block", "flex"]} m={5}>
+  <Layout variant="stack" gap={3}>
+    <Button size="sm">Small</Button>
+    <Button size="sm">Small</Button>
+  </Layout>
+  <Button m={2} size="lg">Large</Button>
+  <Box fontSize="2" border="1px dotted red" fontFamily="Roboto">
+    Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla. Magna cupidatat magna commodo commodo esse elit reprehenderit.
+  </Box>
+</FlexBox>
+<FlexBox alignItems="center" display={["block", "flex"]} m={5}>
+  <Layout variant="stretchedStack">
+    <Button size="sm">Small</Button>
+    <div />
+    <Button size="sm">Small</Button>
+  </Layout>
+  <Button size="lg">Large</Button>
+  <Box fontSize="2" border="1px dotted red" fontFamily="Roboto">
+    Irure nostrud aute aliqua magna fugiat sunt dolor elit minim ullamco Lorem consequat. Nisi fugiat nostrud sint nulla.
+  </Box>
 </FlexBox>
   </Story>
 </Canvas>
@@ -101,8 +119,8 @@ The default button is large.
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2} disabled>Default</Button>
   <Button m={2} disabled variant="secondary">Secondary</Button>
-  <Button m={2} disabled variant="tertiary">Tertiary</Button>
   <Button m={2} disabled variant="warning">Warning</Button>
+  <Button m={2} disabled variant="danger">Danger</Button>
 </FlexBox>
   </Story>
 </Canvas>
@@ -114,8 +132,8 @@ The default button is large.
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}><FaBeer width="20px" height="20px" /> Default</Button>
   <Button m={2} variant="secondary">Secondary <FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} variant="tertiary"><FaBeer width="20px" height="20px" /> Tertiary</Button>
   <Button m={2} variant="warning">Warning <FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} variant="danger"><FaBeer width="20px" height="20px" /> Danger</Button>
 </FlexBox>
 </Story>
 </Canvas>
@@ -126,7 +144,7 @@ The default button is large.
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2} themeKey="iconButtons"><FaBeer width="20px" height="20px" /></Button>
   <Button m={2} themeKey="iconButtons" variant="secondary"><FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} themeKey="iconButtons" variant="tertiary"><FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} themeKey="iconButtons" variant="danger"><FaBeer width="20px" height="20px" /></Button>
   <Button m={2} themeKey="iconButtons" variant="warning"><FaBeer width="20px" height="20px" /></Button>
 </FlexBox>
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
@@ -135,26 +153,4 @@ The default button is large.
   <Button m={2} themeKey="iconButtons" size="sm"><FaBeer width="20px" height="20px" /></Button>
 </FlexBox>
 </Story>
-</Canvas>
-
-## Grouped Buttons
-
-<Canvas>
-  <Story name="Grouped Buttons">
-<FlexBox alignItems="center"  display={["block", "flex"]} mb={4}>
-  <Button groupPos="left">Selected</Button>
-  <Button variant="unselected" groupPos="middle">Unselected</Button>
-  <Button variant="unselected" groupPos="right">Unselected</Button>
-</FlexBox>
-<FlexBox alignItems="center"  display={["block", "flex"]} my={4}>
-  <Button size="md" variant="unselected" groupPos="left">Unselected</Button>
-  <Button size="md" variant="unselected" groupPos="middle">Unselected</Button>
-  <Button size="md" groupPos="right">Selected</Button>
-</FlexBox>
-<FlexBox alignItems="center"  display={["block", "flex"]} mt={4}>
-  <Button size="sm" variant="unselected" groupPos="left">Unselected</Button>
-  <Button size="sm" groupPos="middle">Selected</Button>
-  <Button size="sm" variant="unselected" groupPos="right">Unselected</Button>
-</FlexBox>
-  </Story>
 </Canvas>
