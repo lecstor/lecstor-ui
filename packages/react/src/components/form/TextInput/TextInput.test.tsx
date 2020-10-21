@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "../../../../test";
-import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
 
@@ -55,26 +54,13 @@ describe("TextInput", () => {
     `);
   });
 
-  test("calls onClick on {enter}", async () => {
-    const onClick = jest.fn();
-    render(<TextInput onClick={onClick}>Click Me!</TextInput>);
-    const button = screen.getByRole("button");
-
-    await userEvent.type(button, "{enter}");
-    expect(onClick).toHaveBeenCalled();
-  });
-
-  test("calls onClick on {space}", async () => {
-    const onClick = jest.fn();
-    render(<TextInput onClick={onClick}>Click Me!</TextInput>);
-    const button = screen.getByRole("button");
-
-    await userEvent.type(button, "{space}");
-    expect(onClick).toHaveBeenCalled();
-  });
-
   test("does not fail some accessibility tests from axe", async () => {
-    const { container } = render(<TextInput>Click</TextInput>);
+    const { container } = render(
+      <>
+        <label htmlFor="myinput">Foo</label>
+        <TextInput id="myinput" />
+      </>
+    );
     expect(await axe(container)).toHaveNoViolations();
   });
 });
