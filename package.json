@@ -6,11 +6,7 @@
   "dependencies": {
     "@changesets/cli": "^2.6.5",
     "eslint": "^7.10.0",
-    "jest": "^26.4.2",
-    "react": "^16.13.1",
-    "ts-jest": "^26.4.1",
-    "tslib": "^2.0.1",
-    "typescript": "^4.0.3"
+    "react": "^16.13.1"
   },
   "workspaces": [
     "packages/*"
@@ -25,7 +21,8 @@
     "changeset": "changeset",
     "release": "yarn verify && changeset publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pkg-react": "yarn workspace @lecstor/ui-react"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

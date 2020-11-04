@@ -1,44 +1,55 @@
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
-import dts from "rollup-plugin-dts";
+import typescript from "@rollup/plugin-typescript";
+// import dts from "rollup-plugin-dts";
 
 export default [
-  {
-    input: "dist/es/index.js",
-    output: {
-      file: "dist/umd/index.js",
-      format: "umd",
-      name: "lecstor-ui",
-      esModule: false,
-    },
-    plugins: [commonjs(), nodeResolve()],
-  },
+  // {
+  //   input: "src/index.ts",
+  //   output: {
+  //     dir: "umd",
+  //     format: "umd",
+  //     name: "lecstor-ui",
+  //     esModule: false,
+  //   },
+  //   plugins: [commonjs(), nodeResolve(), typescript({ outDir: "umd", exclude: ["**/*.test.*"] })],
+  // },
   {
     input: {
-      // index: "es",
-      Box: "dist/es/components/Box",
-      FlexBox: "dist/es/components/FlexBox",
-      Button: "dist/es/components/form/Button",
-      icons: "dist/es/components/icons",
-      Layout: "dist/es/components/Layout",
-      theme: "dist/es/theme",
+      index: "src/index.ts",
+      Box: "src/components/Box/index.tsx",
+      FlexBox: "src/components/FlexBox/index.tsx",
+      Button: "src/components/form/Button/index.tsx",
+      icons: "src/components/icons/index.ts",
+      Layout: "src/components/Layout/index.tsx",
+      theme: "src/theme/index.tsx",
+      mergeTheme: "src/theme/mergeTheme.ts",
     },
     output: [
       {
-        dir: "dist/esm",
+        dir: "esm",
         format: "esm",
+        sourcemap: true,
       },
-      {
-        dir: "dist/cjs",
-        format: "cjs",
-      },
+      // {
+      //   dir: "cjs",
+      //   format: "cjs",
+      // },
     ],
-    plugins: [commonjs(), nodeResolve()],
+    plugins: [
+      commonjs(),
+      nodeResolve(),
+      typescript({
+        outDir: "esm",
+        exclude: ["**/*.test.*", "test/**/*"],
+        tsBuildInfoFile: "esm/tsconfig.tsbuildinfo",
+      }),
+    ],
     external: ["@emotion/react", "react", "react-icons/fa", "styled-system"],
   },
-  {
-    input: "dist/es/index.d.ts",
-    output: [{ file: "dist/esm/index.d.ts", format: "es" }],
-    plugins: [dts()],
-  },
+  // {
+  //   input: "dist/es/index.d.ts",
+  //   output: [{ file: "dist/esm/index.d.ts", format: "es" }],
+  //   plugins: [dts()],
+  // },
 ];
