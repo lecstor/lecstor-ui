@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { DsProvider } from "../../theme";
+import { UIProvider } from "../../theme";
 
 import { Box, Layout } from "..";
 
@@ -10,9 +10,9 @@ export default {
   component: Layout,
   decorators: [
     (AStory: Story) => (
-      <DsProvider>
+      <UIProvider>
         <AStory />
-      </DsProvider>
+      </UIProvider>
     ),
   ],
 } as Meta;

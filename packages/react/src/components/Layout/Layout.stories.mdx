@@ -1,6 +1,6 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 
-import { DsProvider } from '../../theme';
+import { UIProvider } from '../../theme';
 
 import { Layout, Box, Button, Flex } from "../";
 
@@ -9,9 +9,9 @@ import { FaBeer } from "../icons";
 <Meta title="components/Layout" component={Layout}
   decorators={[
     Story => (
-      <DsProvider>
+      <UIProvider>
         <Story />
-      </DsProvider>
+      </UIProvider>
     ),
   ]}
   argTypes={{

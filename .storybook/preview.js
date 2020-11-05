@@ -1,11 +1,11 @@
 import React from 'react';
-import { DsProvider } from '../packages/react/src/theme';
+import { UIProvider } from '../packages/react/src/theme';
 
 export const decorators = [
   (Story) => (
-    <DsProvider>
+    <UIProvider>
       <Story />
-    </DsProvider>
+    </UIProvider>
   ),
 ];
 

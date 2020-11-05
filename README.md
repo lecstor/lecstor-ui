@@ -29,5 +29,5 @@ https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-w
 in `.storybook/preview.js` this doesn't feel right
 
 ```
-import { DsProvider } from '../packages/react/src/theme';
+import { UIProvider } from '../packages/react/src/theme';
 ```

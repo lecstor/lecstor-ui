@@ -12,11 +12,11 @@ export { mergeTheme };
 
 export type StylesObject = CSSObject;
 
-type DsProviderProps = {
+type UIProviderProps = {
   theme?: Theme;
 };
 
-export const DsProvider: FC<DsProviderProps> = ({ children, theme }) => {
+export const UIProvider: FC<UIProviderProps> = ({ children, theme }) => {
   console.log({ defaultTheme });
   const ourTheme = theme ? mergeTheme(defaultTheme, theme) : defaultTheme;
   return <ThemeProvider theme={ourTheme}>{children}</ThemeProvider>;

@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
-import { DsProvider } from "../src/theme";
+import { UIProvider } from "../src/theme";
 
 const AllTheProviders: FC = ({ children }) => {
-  return <DsProvider>{children}</DsProvider>;
+  return <UIProvider>{children}</UIProvider>;
 };
 
 const customRender = (
