@@ -1,11 +1,10 @@
 {
   "name": "@lecstor/ui-react",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "React component library",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
-  "repository": "",
   "author": "Jason Galea <jason@lecstor.com",
   "license": "MIT",
   "scripts": {
@@ -18,6 +17,14 @@
     "esm/*",
     "umd/*"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lecstor/lecstor-ui.git",
+    "directory": "packages/react"
+  },
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.8",
     "@emotion/react": "^11.0.0-next.19",
