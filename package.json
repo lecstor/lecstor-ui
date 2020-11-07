@@ -22,7 +22,8 @@
     "release": "yarn verify && changeset publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pkg-react": "yarn workspace @lecstor/ui-react"
+    "pkg-react": "yarn workspace @lecstor/ui-react",
+    "pkg-theme": "yarn workspace @lecstor/ui-default-theme"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
