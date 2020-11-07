@@ -1,6 +1,6 @@
 {
   "name": "@lecstor/ui-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React component library",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -28,7 +28,7 @@
   "dependencies": {
     "@emotion/is-prop-valid": "^0.8.8",
     "@emotion/react": "^11.0.0-next.19",
-    "@lecstor/ui-default-theme": "0.0.1",
+    "@lecstor/ui-default-theme": "0.0.2",
     "@styled-system/css": "^5.1.5",
     "lodash.get": "^4.4.2",
     "react-icons": "^3.11.0",
