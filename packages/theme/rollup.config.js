@@ -12,7 +12,7 @@ export default [
         sourcemap: true,
         sourcemapExcludeSources: true,
         preserveModules: true,
-        preserveModulesRoot: 'src'
+        preserveModulesRoot: "src",
       },
     ],
     plugins: [

@@ -12,9 +12,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn tsc -b",
-    "build-all": "yarn tsc -b && yarn workspace @lecstor/ui-react build",
-    "build-react": "yarn workspace @lecstor/ui-react build",
+    "build": "yarn workspaces foreach run build",
     "test": "yarn jest",
     "lint": "eslint --fix --ext .js,.ts,.tsx .",
     "verify": "yarn build && yarn test && yarn lint",
@@ -40,6 +38,7 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.3",
+    "jest": "^26.6.3",
     "jest-emotion": "^10.0.32",
     "prettier": "^2.1.2",
     "react-dom": "^16.13.1",

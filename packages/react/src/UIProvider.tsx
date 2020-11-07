@@ -7,8 +7,6 @@ import { theme as defaultTheme, Theme } from "@lecstor/ui-default-theme";
 import { mergeTheme } from "./utils/mergeTheme";
 
 export { useTheme } from "@emotion/react";
-export * from "./hooks/useThemePresets";
-export { mergeTheme };
 
 export type StylesObject = CSSObject;
 
