@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { render, RenderOptions, RenderResult } from "@testing-library/react";
-import { UIProvider } from "../src/theme";
+import { UIProvider } from "../src/UIProvider";
 
 const AllTheProviders: FC = ({ children }) => {
   return <UIProvider>{children}</UIProvider>;

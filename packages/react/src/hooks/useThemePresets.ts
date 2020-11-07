@@ -2,7 +2,7 @@ import get from "lodash.get";
 import css from "@styled-system/css";
 
 import { useTheme } from "@emotion/react";
-import { mergeTheme } from "./mergeTheme";
+import { mergeTheme } from "../utils/mergeTheme";
 
 export const useThemePresets = (
   themeKey: string,

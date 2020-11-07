@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "../../../../test";
+import { render, screen } from "../../test";
 import "@testing-library/jest-dom/extend-expect";
 import { axe, toHaveNoViolations } from "jest-axe";
 

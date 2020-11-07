@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { UIProvider } from "../../theme";
+import { UIProvider } from '../UIProvider';
 
 import { Box, Layout } from "..";
 

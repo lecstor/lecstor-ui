@@ -2,9 +2,9 @@
 import { jsx } from "@emotion/react";
 import { FC, HTMLAttributes } from "react";
 
-import { useThemePresets } from "../../../theme";
+import { useThemePresets } from "../hooks/useThemePresets";
 
-import { Box, BoxProps } from "../../Box";
+import { Box, BoxProps } from "../Box";
 
 export type TextInputProps = BoxProps & {
   size?: string;

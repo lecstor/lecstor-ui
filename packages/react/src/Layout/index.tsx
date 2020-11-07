@@ -2,7 +2,7 @@
 import { jsx } from "@emotion/react";
 import { FC, ReactNode } from "react";
 
-import { useThemePresets } from "../../theme";
+import { useThemePresets } from "../hooks/useThemePresets";
 
 import { Box, BoxProps } from "../Box";
 
