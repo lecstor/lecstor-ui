@@ -39,13 +39,11 @@ describe("TextInput", () => {
         border-style: solid;
         border-width: 1px;
         border-radius: 6px;
-        box-shadow: inset 0 1px 0 rgba(225,228,232,.2);
         font-size: 1rem;
         line-height: 1.5;
         -webkit-flex: auto;
         -ms-flex: auto;
         flex: auto;
-        min-height: 28px;
       }
 
       <input

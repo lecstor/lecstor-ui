@@ -36,8 +36,6 @@ export default [
         format: "cjs",
         sourcemap: true,
         sourcemapExcludeSources: true,
-        // preserveModules: true,
-        // preserveModulesRoot: 'src'
       },
     ],
     plugins: [
