@@ -10,8 +10,6 @@ export const useThemePresets = (
   customStyle?: { [key: string]: any }
 ) => {
   const theme = useTheme();
-
-  console.log({ theme, themeKey });
   const { defaultProps, defaultStyle } = get(theme, themeKey);
 
   if (defaultProps || selectedPresets) {
@@ -20,7 +18,6 @@ export const useThemePresets = (
     const presetsStyle = presetTypes.reduce((styles, type) => {
       const selectedPreset = selectedPresets?.[type] || defaultProps?.[type];
       if (!selectedPreset) return styles;
-      console.log("preset", `${themeKey}.${type}.${selectedPreset}`);
       const preset = get(theme, `${themeKey}.${type}.${selectedPreset}`);
       styles = mergeTheme(styles, preset);
       return styles;
