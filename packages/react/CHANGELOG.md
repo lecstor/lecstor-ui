@@ -1,5 +1,11 @@
 # @lecstor/ui-react
 
+## 0.1.1
+
+### Patch Changes
+
+- 189c9c5: Set up utils package for release
+
 ## 0.1.0
 
 ### Minor Changes
