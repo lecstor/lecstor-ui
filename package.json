@@ -21,7 +21,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pkg-react": "yarn workspace @lecstor/ui-react",
-    "pkg-theme": "yarn workspace @lecstor/ui-default-theme"
+    "pkg-theme": "yarn workspace @lecstor/ui-default-theme",
+    "pkg-utils": "yarn workspace @lecstor/ui-utils"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

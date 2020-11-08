@@ -15,7 +15,6 @@ type UIProviderProps = {
 };
 
 export const UIProvider: FC<UIProviderProps> = ({ children, theme }) => {
-  console.log({ defaultTheme });
   const ourTheme = theme ? mergeTheme(defaultTheme, theme) : defaultTheme;
   return <ThemeProvider theme={ourTheme}>{children}</ThemeProvider>;
 };
