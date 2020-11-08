@@ -1,11 +1,3 @@
-https://medium.com/@jakeginnivan/a-great-typescript-npm-module-mono-repo-setup-e737937210
-
-
-To add dependencies to this root project you need to specify the -W flag when adding the dependency.
-
-```sh
-yarn add typescript -W
-```
 
 ### package/tsconfig.json
 
@@ -16,11 +8,14 @@ yarn add typescript -W
 
 ```
 % yarn changeset
-% yarn changeset version
-% git commit -m "mt commit message"
+% git commit -m "add changeset"
 ```
 
-https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+# Yarn
+
+We use Yarn 2 to manage this repository
+
+To update to the latet version `yarn set version latest`
 
 # TODO
 
@@ -31,3 +26,9 @@ in `.storybook/preview.js` this doesn't feel right
 ```
 import { UIProvider } from '../packages/react/src/theme';
 ```
+
+# References
+
+- [Publishing packages to GitHub Packages](https://docs.github.com/en/free-pro-team@latest/actions/guides/publishing-nodejs-packages#publishing-packages-to-github-packages)
+- https://medium.com/@jakeginnivan/a-great-typescript-npm-module-mono-repo-setup-e737937210
+- https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
