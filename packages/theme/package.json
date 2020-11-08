@@ -1,6 +1,6 @@
 {
   "name": "@lecstor/ui-default-theme",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Design System theme",
   "main": "cjs/index.js",
   "module": "esm/index.js",
