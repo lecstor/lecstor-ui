@@ -49,7 +49,7 @@ describe("Button", () => {
         }
       }
 
-      .emotion-0 >* {
+      .emotion-0>* {
         vertical-align: text-top;
       }
 
