@@ -1,5 +1,5 @@
 import React from 'react';
-import { UIProvider } from '../packages/react/src/theme';
+import { UIProvider } from '../packages/react/src/UIProvider';
 
 export const decorators = [
   (Story) => (
