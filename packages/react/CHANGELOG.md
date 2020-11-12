@@ -1,5 +1,13 @@
 # @lecstor/ui-react
 
+## 0.1.2
+
+### Patch Changes
+
+- 78435e9: Dependency updates & misc fixes
+- Updated dependencies [78435e9]
+  - @lecstor/ui-default-theme@0.1.1
+
 ## 0.1.1
 
 ### Patch Changes
