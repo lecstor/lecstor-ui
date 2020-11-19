@@ -9,7 +9,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf esm cjs && rollup --config",
-    "prepare": "yarn build"
+    "prepack": "yarn build",
+    "postinstall": "yarn build"
   },
   "files": [
     "cjs/*",
@@ -43,6 +44,10 @@
     "typescript": "^4.0.5"
   },
   "dependencies": {
-    "csstype": "^3.0.5"
+    "@emotion/css": "^11.0.0",
+    "@styled-system/css": "^5.1.5",
+    "csstype": "^3.0.5",
+    "styled-system": "^5.1.5",
+    "tslib": "^2.0.3"
   }
 }

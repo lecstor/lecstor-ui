@@ -10,7 +10,8 @@
   "sideEffects": false,
   "scripts": {
     "build": "rimraf esm cjs && rollup --config",
-    "prepare": "yarn build",
+    "prepack": "yarn build",
+    "postinstall": "yarn build",
     "test": "yarn jest"
   },
   "files": [
@@ -30,6 +31,7 @@
     "@emotion/react": "^11.0.0",
     "@lecstor/ui-default-theme": "0.1.2",
     "@styled-system/css": "^5.1.5",
+    "deepmerge": "^4.2.2",
     "lodash.get": "^4.4.2",
     "react-icons": "^3.11.0",
     "styled-system": "^5.1.5",
@@ -39,6 +41,7 @@
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-typescript": "^6.1.0",
+    "@storybook/react": "^6.1.0",
     "@testing-library/dom": "^7.26.6",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",

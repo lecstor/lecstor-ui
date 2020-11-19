@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from "react";
 import { ThemeProvider } from "@emotion/react";
-import { CSSObject } from "@emotion/css";
 
 import {
   theme as defaultTheme,
@@ -10,8 +9,6 @@ import {
 import { mergeTheme } from "./utils/mergeTheme";
 
 export { useTheme } from "@emotion/react";
-
-export type StylesObject = CSSObject;
 
 type UIProviderProps<Theme> = {
   theme?: Theme;
