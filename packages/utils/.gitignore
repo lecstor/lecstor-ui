@@ -1,0 +1,8 @@
+cjs/
+es/
+esm/
+umd/
+package/
+.DS_Store
+tsconfig.tsbuildinfo
+*.tgz

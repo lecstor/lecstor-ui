@@ -1,38 +1,35 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
+import { SystemStyleObject } from "@styled-system/css";
+import {
+  border,
+  grid,
+  layout,
+  space as spaceUtil,
+  BorderProps,
+  GridProps,
+  LayoutProps as SSLayoutProps,
+  SpaceProps,
+} from "styled-system";
+
 import { FC, ReactNode } from "react";
 
-import { useThemePresets } from "../hooks/useThemePresets";
+import { handleStyleProps } from "../utils/handleStyleProps";
 
-import { Box, BoxProps } from "../Box";
+export type LayoutProps = BorderProps &
+  GridProps &
+  SpaceProps &
+  SSLayoutProps & {
+    look?: string;
+    space?: "between" | "around";
+    sx?: SystemStyleObject;
+    children?: ReactNode;
+  };
 
-export type LayoutProps = BoxProps & {
-  variant?: string;
-  gap?: number;
-  space?: "between" | "around";
-  children?: ReactNode;
-};
-
-export const Layout: FC<LayoutProps> = ({
-  children,
-  variant,
-  space: spacing,
-  gap,
-  ...props
-}) => {
-  const customStyle = { gridGap: gap };
-  const presetStyles = useThemePresets(
-    "layout",
-    {
-      variant,
-      space: spacing,
-    },
-    customStyle
-  );
-
-  return (
-    <Box as="div" css={presetStyles} {...props}>
-      {children}
-    </Box>
-  );
+export const Layout: FC<LayoutProps> = (props) => {
+  const forwardProps = handleStyleProps(props, {
+    variantKeys: ["look", "space"],
+    systemUtils: [border, grid, layout, spaceUtil],
+  });
+  return <div {...forwardProps} />;
 };

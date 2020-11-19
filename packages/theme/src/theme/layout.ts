@@ -1,59 +1,59 @@
-import * as CSS from "csstype";
-
-type cssPropertiesFallback = CSS.PropertiesFallback<
-  string | number | string[] | number[]
->;
-
-type cssType =
-  | cssPropertiesFallback
-  | {
-      [key: string]: cssPropertiesFallback;
-    };
+import { SystemStyleObject } from "@styled-system/css";
 
 export type Layout = {
-  variant: {
-    [key: string]: cssType;
+  variants: {
+    base: SystemStyleObject;
+    look: {
+      [key: string]: SystemStyleObject;
+    };
+    space: {
+      [key: string]: SystemStyleObject;
+    };
   };
-  space: {
-    [key: string]: cssType;
-  };
-  defaultProps: { variant: string };
+  defaultProps: { look: string };
 };
 
 export const layout: Layout = {
-  variant: {
-    centered: {
-      display: "grid",
-      placeItems: "center",
+  variants: {
+    base: {
+      boxSizing: "border-box",
     },
-    stack: {
-      display: "grid",
-      gridGap: 0,
+    look: {
+      centered: {
+        display: "grid",
+        placeItems: "center",
+      },
+      stack: {
+        display: "grid",
+        columnGap: 0,
+        rowGap: 0,
+      },
+      stretchedStack: {
+        display: "grid",
+        alignSelf: "stretch",
+        gridTemplateRows: "auto 1fr auto",
+      },
+      responsiveStack: {
+        display: "grid",
+        columnGap: 0,
+        rowGap: 0,
+        justifyContent: ["", "start"],
+        gridAutoFlow: ["", "column"],
+      },
     },
-    stretchedStack: {
-      display: "grid",
-      alignSelf: "stretch",
-      gridTemplateRows: "auto 1fr auto",
-    },
-    responsiveStack: {
-      display: "grid",
-      gridGap: 0,
-      justifyContent: ["", "start"],
-      gridAutoFlow: ["", "column"],
-    },
-  },
-  space: {
-    before: {
-      justifyContent: ["", "end"],
-    },
-    between: {
-      justifyContent: ["", "space-between"],
-    },
-    around: {
-      justifyContent: ["", "space-around"],
+    space: {
+      before: {
+        justifyContent: ["", "end"],
+      },
+      between: {
+        justifyContent: ["", "space-between"],
+      },
+      around: {
+        justifyContent: ["", "space-around"],
+      },
     },
   },
   defaultProps: {
-    variant: "stack",
+    look: "stack",
   },
 };

@@ -24,7 +24,7 @@ const StoryBox: FC = ({ children }) => (
 );
 
 export const defaultStack = () => (
-  <Layout variant="stack" border="1px solid green">
+  <Layout look="stack" border="1px solid green">
     <StoryBox>First</StoryBox>
     <StoryBox>Second</StoryBox>
     <StoryBox>Third</StoryBox>
@@ -32,7 +32,7 @@ export const defaultStack = () => (
 );
 
 export const withGap = () => (
-  <Layout variant="stack" gap={2} border="1px solid green">
+  <Layout look="stack" gridGap={2} border="1px solid green">
     <StoryBox>First</StoryBox>
     <StoryBox>Second</StoryBox>
     <StoryBox>Third</StoryBox>
@@ -40,7 +40,7 @@ export const withGap = () => (
 );
 
 export const withPadding = () => (
-  <Layout variant="stack" p={2} border="1px solid green">
+  <Layout look="stack" p={2} border="1px solid green">
     <StoryBox>First</StoryBox>
     <StoryBox>Second</StoryBox>
     <StoryBox>Third</StoryBox>
@@ -48,7 +48,7 @@ export const withPadding = () => (
 );
 
 export const withGapAndPadding = () => (
-  <Layout variant="stack" gap={2} p={2} border="1px solid green">
+  <Layout look="stack" gridGap={2} p={2} border="1px solid green">
     <StoryBox>First</StoryBox>
     <StoryBox>Second</StoryBox>
     <StoryBox>Third</StoryBox>
