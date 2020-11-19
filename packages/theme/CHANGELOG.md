@@ -1,5 +1,15 @@
 # @lecstor/ui-default-theme
 
+## 0.1.2
+
+### Patch Changes
+
+- 866859d: Refactor theme
+
+  - restructure variants
+  - improve typing
+  - update csstype to 3.0.5
+
 ## 0.1.1
 
 ### Patch Changes
