@@ -1,5 +1,46 @@
 # @lecstor/ui-react
 
+## 0.1.3
+
+### Patch Changes
+
+- 866859d: Refactor theme usage
+
+  Box
+
+  - use handleStyleProps
+  - improve typing
+
+  Button
+
+  - make BaseButton usable as an unstyled button
+  - update Button to use BaseButton
+    - sets themeKey to use default variants
+
+  Layout
+
+  - use handleStyleProps
+  - use styled-system border, grid, layout, space utils
+
+  TextInput
+
+  - use handleStyleProps
+  - use styled-system space util
+
+  hooks
+
+  - remove useThemePresets
+
+  utils
+
+  - add handleStyleProps
+    - cssFn
+    - getForwardProps
+    - makeGetVariants
+
+- Updated dependencies [866859d]
+  - @lecstor/ui-default-theme@0.1.2
+
 ## 0.1.2
 
 ### Patch Changes
