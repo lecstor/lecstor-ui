@@ -1,6 +1,8 @@
+import { Theme as BaseTheme } from "styled-system";
+
 import { buttons, Buttons } from "./buttons";
-import { textInput } from "./text-input";
-import { colors, Colors } from "./colors";
+import { textInput, TextInput } from "./text-input";
+import { colors } from "./colors";
 import { iconButtons } from "./icon-buttons";
 
 import {
@@ -11,24 +13,13 @@ import {
   lineHeights,
 } from "./typography";
 import { borderWidths, breakpoints, space, radii } from "./scales";
-import { layout } from "./layout";
+import { layout, Layout } from "./layout";
 
-export type Theme = {
-  borderWidths: typeof borderWidths;
-  colors: Colors;
-  fonts: typeof fonts;
-  fontSizes: typeof fontSizes;
-  fontWeights: typeof fontWeights;
-  letterSpacings: typeof letterSpacings;
-  lineHeights: typeof lineHeights;
-  breakpoints: typeof breakpoints;
-  space: typeof space;
-  radii: typeof radii;
-
+export type Theme = Omit<BaseTheme, "buttons"> & {
   buttons: Buttons;
-  iconButtons: typeof iconButtons;
-  layout: typeof layout;
-  textInput: typeof textInput;
+  iconButtons: Buttons;
+  layout: Layout;
+  textInput: TextInput;
 };
 
 export const theme: Theme = {
