@@ -8,7 +8,7 @@ import { FaBeer } from "../icons";
 
 <Meta title="components/Buttons" component={Button}
   argTypes={{
-    variant: {
+    look: {
       control: {
         type: "select",
         options: ["primary", "secondary", "danger", "warning"],
@@ -34,9 +34,9 @@ import { FaBeer } from "../icons";
   <Story name="Preview">
 <FlexBox m={3} alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}>Default</Button>
-  <Button m={2} size="md" variant="secondary"><FaBeer width="20px" height="20px" /> Medium Secondary</Button>
-  <Button m={2} size="sm" variant="warning">Small Warning</Button>
-  <Button m={2} disabled variant="danger">Disabled</Button>
+  <Button m={2} size="md" look="secondary"><FaBeer width="20px" height="20px" /> Medium Secondary</Button>
+  <Button m={2} size="sm" look="warning">Small Warning</Button>
+  <Button m={2} disabled look="danger">Disabled</Button>
   <Button m={2} themeKey="iconButtons"><FaBeer width="20px" height="20px" /></Button>
 </FlexBox>
   </Story>
@@ -48,9 +48,9 @@ import { FaBeer } from "../icons";
   <Story name="Variants">
 <FlexBox m={3} alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}>Default</Button>
-  <Button m={2} variant="secondary">Secondary</Button>
-  <Button m={2} variant="warning">Warning</Button>
-  <Button m={2} variant="danger">Danger</Button>
+  <Button m={2} look="secondary">Secondary</Button>
+  <Button m={2} look="warning">Warning</Button>
+  <Button m={2} look="danger">Danger</Button>
 </FlexBox>
   </Story>
 </Canvas>
@@ -89,7 +89,7 @@ import { FaBeer } from "../icons";
   </Box>
 </FlexBox>
 <FlexBox alignItems="center" display={["block", "flex"]} m={5}>
-  <Layout variant="stack" gap={3}>
+  <Layout look="stack" gap={3}>
     <Button size="sm">Small</Button>
     <Button size="sm">Small</Button>
   </Layout>
@@ -99,7 +99,7 @@ import { FaBeer } from "../icons";
   </Box>
 </FlexBox>
 <FlexBox alignItems="center" display={["block", "flex"]} m={5}>
-  <Layout variant="stretchedStack">
+  <Layout look="stretchedStack">
     <Button size="sm">Small</Button>
     <div />
     <Button size="sm">Small</Button>
@@ -118,9 +118,9 @@ import { FaBeer } from "../icons";
   <Story name="Disabled Variants">
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2} disabled>Default</Button>
-  <Button m={2} disabled variant="secondary">Secondary</Button>
-  <Button m={2} disabled variant="warning">Warning</Button>
-  <Button m={2} disabled variant="danger">Danger</Button>
+  <Button m={2} disabled look="secondary">Secondary</Button>
+  <Button m={2} disabled look="warning">Warning</Button>
+  <Button m={2} disabled look="danger">Danger</Button>
 </FlexBox>
   </Story>
 </Canvas>
@@ -131,9 +131,9 @@ import { FaBeer } from "../icons";
   <Story name="With Icons">
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2}><FaBeer width="20px" height="20px" /> Default</Button>
-  <Button m={2} variant="secondary">Secondary <FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} variant="warning">Warning <FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} variant="danger"><FaBeer width="20px" height="20px" /> Danger</Button>
+  <Button m={2} look="secondary">Secondary <FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} look="warning">Warning <FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} look="danger"><FaBeer width="20px" height="20px" /> Danger</Button>
 </FlexBox>
 </Story>
 </Canvas>
@@ -143,9 +143,9 @@ import { FaBeer } from "../icons";
   <Story name="Icon Buttons">
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2} themeKey="iconButtons"><FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} themeKey="iconButtons" variant="secondary"><FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} themeKey="iconButtons" variant="danger"><FaBeer width="20px" height="20px" /></Button>
-  <Button m={2} themeKey="iconButtons" variant="warning"><FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} themeKey="iconButtons" look="secondary"><FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} themeKey="iconButtons" look="danger"><FaBeer width="20px" height="20px" /></Button>
+  <Button m={2} themeKey="iconButtons" look="warning"><FaBeer width="20px" height="20px" /></Button>
 </FlexBox>
 <FlexBox alignItems="center" justifyContent="space-around" display={["block", "flex"]}>
   <Button m={2} themeKey="iconButtons"><FaBeer width="20px" height="20px" /></Button>

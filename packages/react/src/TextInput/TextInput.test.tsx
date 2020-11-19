@@ -9,7 +9,7 @@ import { TextInput } from ".";
 
 describe("TextInput", () => {
   test("renders a text input", async () => {
-    const { container, debug } = render(<TextInput />);
+    const { container, debug } = render(<TextInput id="myinput" />);
     debug();
 
     const input = screen.getByRole("textbox");
@@ -35,7 +35,7 @@ describe("TextInput", () => {
         background-repeat: no-repeat;
         -webkit-background-position: right 8px center;
         background-position: right 8px center;
-        border-color: #D2D2D2;
+        border-color: #1d45d6;
         border-style: solid;
         border-width: 1px;
         border-radius: 6px;
@@ -48,6 +48,7 @@ describe("TextInput", () => {
 
       <input
         class="emotion-0"
+        id="myinput"
       />
     `);
   });

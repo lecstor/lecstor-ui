@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import isPropValid from "@emotion/is-prop-valid";
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import {
   border,
   color,
@@ -15,50 +14,29 @@ import {
   ColorStyleProps,
   LayoutProps,
   TypographyProps,
-  compose,
 } from "styled-system";
 
-function filterProps(props: any) {
-  const htmlProps: Record<string, string> = {};
-  Object.keys(props).forEach((p) => {
-    if (isPropValid(p)) {
-      htmlProps[p] = props[p];
-    }
-  });
-  return htmlProps;
-}
+import { handleStyleProps } from "../utils/handleStyleProps";
 
 type SxFnProps = BorderProps &
   FlexboxProps &
   SpaceProps &
   ColorStyleProps &
   LayoutProps &
-  TypographyProps & { className?: string; as?: string };
+  TypographyProps &
+  HTMLAttributes<HTMLElement> & { className?: string; as?: string };
 
 export type BoxProps = SxFnProps;
 
-export const Box: FC<BoxProps> = ({
-  children,
-  className,
-  as = "div",
-  ...props
-}) => {
-  return jsx(as, {
-    className,
-    css: (theme: any) =>
-      compose(
-        () => ({
-          boxSizing: "border-box",
-          minWidth: 0,
-        }),
-        border,
-        color,
-        flexbox,
-        layout,
-        space,
-        typography
-      )({ theme, ...props }),
-    ...filterProps(props),
-    children,
+export const Box: FC<BoxProps> = ({ as = "div", ...props }) => {
+  const forwardProps = handleStyleProps(props, {
+    variantKeys: ["look", "size"],
+    systemUtils: [border, color, flexbox, layout, space, typography],
+    baseStyle: {
+      boxSizing: "border-box",
+      minWidth: 0,
+    },
   });
+
+  return jsx(as, forwardProps);
 };

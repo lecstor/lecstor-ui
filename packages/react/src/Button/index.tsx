@@ -1,35 +1,19 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { FC, HTMLAttributes, ReactNode } from "react";
+import { FC } from "react";
 
-import { useThemePresets } from "../hooks/useThemePresets";
+import { BaseButton, ButtonProps } from "../BaseButton";
 
-import { Box, BoxProps } from "../Box";
-
-export type ButtonProps = BoxProps & {
-  size?: string;
-  variant?: string;
-  themeKey?: "buttons" | "iconButtons";
-  disabled?: boolean;
-  groupPos?: string;
-  children?: ReactNode;
-} & HTMLAttributes<HTMLButtonElement>;
+export { ButtonProps };
 
 export const Button: FC<ButtonProps> = ({
-  variant,
-  size,
   children,
   themeKey = "buttons",
   ...props
 }) => {
-  const presetStyles = useThemePresets(themeKey, {
-    variant,
-    size,
-  });
-
   return (
-    <Box as="button" css={presetStyles} {...props}>
+    <BaseButton themeKey={themeKey} {...props}>
       {children}
-    </Box>
+    </BaseButton>
   );
 };

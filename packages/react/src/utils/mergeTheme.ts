@@ -1,18 +1,17 @@
 import merge from "deepmerge";
 
-import { Theme } from "@lecstor/ui-default-theme";
-
 /* deepmerge concatenates arrays by default which doesn't work for our responsive arrays */
 
 const defaultOptions = {
-  arrayMerge: (destinationArray: any[], sourceArray: any[]) =>
+  arrayMerge: (destinationArray: unknown[], sourceArray: unknown[]) =>
     sourceArray || destinationArray,
 };
 
-export function mergeTheme(
+export function mergeTheme<Theme>(
   x: Theme,
   y: Partial<Theme>,
   options?: merge.Options
 ): Theme {
-  return merge(x, y, Object.assign({}, options, defaultOptions));
+  if (!y) return x;
+  return merge<Theme>(x, y, Object.assign({}, options, defaultOptions));
 }

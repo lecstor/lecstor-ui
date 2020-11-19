@@ -4,10 +4,12 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-        "utils": ["../utils"]
+      "theme": ["../theme"],
+      "utils": ["../utils"]
     }
   },
   "references": [
+    { "path": "../theme" },
     { "path": "../utils" }
   ],
   "include": ["src/**/*", "test/**/*"]

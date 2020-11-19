@@ -1,24 +1,27 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 import { SystemStyleObject } from "@styled-system/css";
 import { space, SpaceProps } from "styled-system";
 
 import { handleStyleProps } from "../utils/handleStyleProps";
 
-export type TextInputProps = SpaceProps & {
+export type ButtonProps = SpaceProps & {
   size?: string;
   look?: string;
   sx?: SystemStyleObject;
+  themeKey?: "buttons" | "iconButtons";
   disabled?: boolean;
   groupPos?: string;
-} & HTMLAttributes<HTMLInputElement>;
+  className?: string;
+  children?: ReactNode;
+} & HTMLAttributes<HTMLButtonElement>;
 
-export const TextInput: FC<TextInputProps> = (props) => {
+export const BaseButton: FC<ButtonProps> = (props) => {
   const forwardProps = handleStyleProps(props, {
-    themeKey: "textInput",
     variantKeys: ["look", "size"],
     systemUtils: [space],
   });
-  return <input {...forwardProps} />;
+
+  return <button {...forwardProps} />;
 };
