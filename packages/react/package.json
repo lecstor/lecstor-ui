@@ -7,15 +7,15 @@
   "types": "esm/index.d.ts",
   "author": "Jason Galea <jason@lecstor.com",
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
     "build": "rimraf esm cjs && rollup --config",
     "prepare": "yarn build",
     "test": "yarn jest"
   },
   "files": [
-    "cjs/*",
-    "esm/*",
-    "umd/*"
+    "cjs/**/*",
+    "esm/**/*"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
