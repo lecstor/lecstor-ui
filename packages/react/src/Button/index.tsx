@@ -1,19 +1,20 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { FC } from "react";
+import { forwardRef, FC, Ref } from "react";
 
-import { BaseButton, ButtonProps } from "../BaseButton";
+import { BaseButton } from "../BaseButton";
 
-export { ButtonProps };
+type ButtonProps = React.ComponentProps<typeof BaseButton>;
 
-export const Button: FC<ButtonProps> = ({
-  children,
-  themeKey = "buttons",
-  ...props
-}) => {
-  return (
-    <BaseButton themeKey={themeKey} {...props}>
-      {children}
-    </BaseButton>
-  );
-};
+export const Button: FC<ButtonProps> = forwardRef(
+  (
+    { children, themeKey = "buttons", ...props },
+    ref: Ref<HTMLButtonElement>
+  ) => {
+    return (
+      <BaseButton ref={ref} themeKey={themeKey} {...props}>
+        {children}
+      </BaseButton>
+    );
+  }
+);

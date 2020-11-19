@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { FC, HTMLAttributes } from "react";
+import { forwardRef, FC } from "react";
 import { SystemStyleObject } from "@styled-system/css";
 import { space, SpaceProps } from "styled-system";
 
@@ -12,13 +12,15 @@ export type TextInputProps = SpaceProps & {
   sx?: SystemStyleObject;
   disabled?: boolean;
   groupPos?: string;
-} & HTMLAttributes<HTMLInputElement>;
+} & React.ComponentPropsWithRef<"input">;
 
-export const TextInput: FC<TextInputProps> = (props) => {
-  const forwardProps = handleStyleProps(props, {
-    themeKey: "textInput",
-    variantKeys: ["look", "size"],
-    systemUtils: [space],
-  });
-  return <input {...forwardProps} />;
-};
+export const TextInput: FC<TextInputProps> = forwardRef(
+  (props, ref: React.Ref<HTMLInputElement>) => {
+    const forwardProps = handleStyleProps(props, {
+      themeKey: "textInput",
+      variantKeys: ["look", "size"],
+      systemUtils: [space],
+    });
+    return <input ref={ref} {...forwardProps} />;
+  }
+);
