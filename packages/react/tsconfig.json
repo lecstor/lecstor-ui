@@ -9,7 +9,7 @@
     }
   },
   "references": [
-    { "path": "../theme" },
+    { "path": "../default-theme" },
     { "path": "../utils" }
   ],
   "include": ["src/**/*", "test/**/*"]

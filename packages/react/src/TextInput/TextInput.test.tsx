@@ -9,8 +9,7 @@ import { TextInput } from ".";
 
 describe("TextInput", () => {
   test("renders a text input", async () => {
-    const { container, debug } = render(<TextInput id="myinput" />);
-    debug();
+    const { container } = render(<TextInput id="myinput" />);
 
     const input = screen.getByRole("textbox");
     expect(input).toBeInTheDocument();
