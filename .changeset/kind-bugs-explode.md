@@ -9,3 +9,6 @@ Update dependencies
 - React 17
 - misc others
 
+Rollup
+
+- mark all dependencies and peerDependencies as external
