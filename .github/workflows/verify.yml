@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
-        run: yarn --prefer-offline
+        run: yarn --cached
 
       - name: Verify
         run: yarn verify
