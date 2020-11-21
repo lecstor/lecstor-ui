@@ -3,7 +3,8 @@ name: Release Packages
 on:
   push:
     branches:
-      - main
+      - '*'
+      - '!main'
 
 jobs:
   release:
@@ -38,11 +39,5 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@master
-        with:
-          publish: yarn release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify
+        run: yarn verify
