@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 import { forwardRef, FC } from "react";
 import { SystemStyleObject } from "@styled-system/css";
 import { space, SpaceProps } from "styled-system";

@@ -1,7 +1,10 @@
 import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
-// import dts from "rollup-plugin-dts";
+
+import { rollupIsExternal } from '../../build/rollupIsExternal';
+
+const isExternal = rollupIsExternal();
 
 export default [
   {
@@ -26,19 +29,7 @@ export default [
         tsBuildInfoFile: "esm/tsconfig.tsbuildinfo",
       }),
     ],
-    external: [
-      "tslib",
-      "deepmerge",
-      "lodash.get",
-      "@emotion/react",
-      "@emotion/is-prop-valid",
-      "@emotion/memoize",
-      "@lecstor/ui-default-theme",
-      "@styled-system/css",
-      "react",
-      "react-icons/fa",
-      "styled-system",
-    ],
+    external: isExternal,
   },
   {
     input: "src/index.ts",
@@ -60,23 +51,6 @@ export default [
         tsBuildInfoFile: "cjs/tsconfig.tsbuildinfo",
       }),
     ],
-    external: [
-      "tslib",
-      "deepmerge",
-      "lodash.get",
-      "@emotion/react",
-      "@emotion/is-prop-valid",
-      "@emotion/memoize",
-      "@lecstor/ui-default-theme",
-      "@styled-system/css",
-      "react",
-      "react-icons/fa",
-      "styled-system",
-    ],
+    external: isExternal
   },
-  // {
-  //   input: "dist/es/index.d.ts",
-  //   output: [{ file: "dist/esm/index.d.ts", format: "es" }],
-  //   plugins: [dts()],
-  // },
 ];

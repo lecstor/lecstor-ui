@@ -1,10 +1,9 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 import { forwardRef, FC, Ref } from "react";
 
-import { BaseButton } from "../BaseButton";
+import { BaseButton, BaseButtonProps } from "../BaseButton";
 
-type ButtonProps = React.ComponentProps<typeof BaseButton>;
+export type ButtonProps = BaseButtonProps;
 
 export const Button: FC<ButtonProps> = forwardRef(
   (

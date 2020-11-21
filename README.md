@@ -15,9 +15,11 @@
 
 We use Yarn 2 to manage this repository
 
-To update to the latet version `yarn set version latest`
+To update dependencies: `yarn upgrade-interactive`
 
-To perform a health check `yarn dlx @yarnpkg/doctor .`
+To update to the latest version: `yarn set version latest`
+
+To perform a health check: `yarn dlx @yarnpkg/doctor .`
  
 # TODO
 
