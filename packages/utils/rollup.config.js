@@ -2,6 +2,10 @@ import commonjs from "@rollup/plugin-commonjs";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 
+import { rollupIsExternal } from '../../build/rollupIsExternal';
+
+const isExternal = rollupIsExternal();
+
 export default [
   {
     input: "src/index.ts",
@@ -25,7 +29,7 @@ export default [
         tsBuildInfoFile: "esm/tsconfig.tsbuildinfo",
       }),
     ],
-    external: ["tslib"],
+    external: isExternal,
   },
   {
     input: "src/index.ts",
@@ -47,11 +51,6 @@ export default [
         tsBuildInfoFile: "cjs/tsconfig.tsbuildinfo",
       }),
     ],
-    external: ["tslib"],
+    external: isExternal,
   },
-  // {
-  //   input: "dist/es/index.d.ts",
-  //   output: [{ file: "dist/esm/index.d.ts", format: "es" }],
-  //   plugins: [dts()],
-  // },
 ];
