@@ -17,3 +17,5 @@ export const Button: FC<ButtonProps> = forwardRef(
     );
   }
 );
+
+Button.displayName = "Button";

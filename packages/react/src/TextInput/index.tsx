@@ -23,3 +23,5 @@ export const TextInput: FC<TextInputProps> = forwardRef(
     return <input ref={ref} {...forwardProps} />;
   }
 );
+
+TextInput.displayName = "TextInput";

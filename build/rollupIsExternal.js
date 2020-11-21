@@ -1,16 +1,16 @@
-import fs from 'fs';
+import fs from "fs";
 
-const moduleRegExp = module => new RegExp(`^${module}(\\/\.+)*$`);
+const moduleRegExp = (module) => new RegExp(`^${module}(\\/.+)*$`);
 
 function getModulesMatcher(modulesNames) {
   const regexps = modulesNames.map(moduleRegExp);
-  return id => regexps.some(regexp => regexp.test(id));
+  return (id) => regexps.some((regexp) => regexp.test(id));
 }
 
 export function rollupIsExternal() {
-  const pkg = JSON.parse(fs.readFileSync('./package.json'));
+  const pkg = JSON.parse(fs.readFileSync("./package.json"));
   const deps = Object.keys(pkg.dependencies || {});
   const peerDeps = Object.keys(pkg.peerDependencies || {});
-  
-  return getModulesMatcher([...deps, ...peerDeps]);  
+
+  return getModulesMatcher([...deps, ...peerDeps]);
 }
