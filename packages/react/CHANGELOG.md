@@ -1,5 +1,21 @@
 # @lecstor/ui-react
 
+## 0.1.5
+
+### Patch Changes
+
+- 50f8f77: Update dependencies
+
+  - React 17
+  - misc others
+
+  Rollup
+
+  - mark all dependencies and peerDependencies as external
+
+- Updated dependencies [50f8f77]
+  - @lecstor/ui-default-theme@0.1.3
+
 ## 0.1.4
 
 ### Patch Changes
