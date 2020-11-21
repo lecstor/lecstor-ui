@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 import { FC } from "react";
 
 import { Box, BoxProps } from "../Box";

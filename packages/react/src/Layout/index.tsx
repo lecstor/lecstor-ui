@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 import { SystemStyleObject } from "@styled-system/css";
 import {
   border,
@@ -28,6 +27,7 @@ export type LayoutProps = BorderProps &
 
 export const Layout: FC<LayoutProps> = (props) => {
   const forwardProps = handleStyleProps(props, {
+    themeKey: "layout",
     variantKeys: ["look", "space"],
     systemUtils: [border, grid, layout, spaceUtil],
   });

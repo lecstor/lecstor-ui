@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
+/** @jsxImportSource @emotion/react */
 import { forwardRef, FC, ReactNode } from "react";
 import { SystemStyleObject } from "@styled-system/css";
 import { space, SpaceProps } from "styled-system";
 
 import { handleStyleProps } from "../utils/handleStyleProps";
 
-export type ButtonProps = SpaceProps & {
+export type BaseButtonProps = SpaceProps & {
   size?: string;
   look?: string;
   sx?: SystemStyleObject;
@@ -17,7 +16,7 @@ export type ButtonProps = SpaceProps & {
   children?: ReactNode;
 } & React.ComponentPropsWithRef<"button">;
 
-export const BaseButton: FC<ButtonProps> = forwardRef(
+export const BaseButton: FC<BaseButtonProps> = forwardRef(
   (props, ref: React.Ref<HTMLButtonElement>) => {
     const forwardProps = handleStyleProps(props, {
       variantKeys: ["look", "size"],
