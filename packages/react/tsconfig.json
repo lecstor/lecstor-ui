@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "theme": ["../theme"],
+      "theme": ["../default-theme"],
       "utils": ["../utils"]
     }
   },

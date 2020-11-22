@@ -13,12 +13,12 @@ type GetPropsOptions = {
 };
 
 export function handleStyleProps(
-  props: Record<string, any>,
+  props: { themeKey?: string; sx?: SystemStyleObject } & Record<string, any>,
   options?: GetPropsOptions
 ) {
   const { variantKeys, systemUtils, baseStyle } = options || {};
-  const variants: Record<string, any> = {};
-  variantKeys?.forEach((v: string) => (variants[v] = props[v]));
+  const variants: Record<string, string> = {};
+  variantKeys?.forEach((v: string) => (variants[v] = props[v] as string));
 
   let systemUtil;
   let forwardProps;
@@ -31,7 +31,7 @@ export function handleStyleProps(
   const styleFn = cssFn({
     themeKey: props.themeKey || options?.themeKey,
     variants,
-    sx: baseStyle ? mergeTheme(baseStyle, props.sx) : props.sx,
+    sx: baseStyle ? mergeTheme(baseStyle, props.sx || {}) : props.sx,
     systemUtil,
     props,
   });
