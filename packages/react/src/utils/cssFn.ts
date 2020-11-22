@@ -14,7 +14,7 @@ type CssFnProps = {
   themeKey?: string;
   variants: { [key: string]: string | undefined };
   systemUtil?: styleFn;
-  props?: Record<string, any>;
+  props?: Record<string, unknown>;
 };
 
 export function cssFn({
