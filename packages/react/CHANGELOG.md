@@ -1,5 +1,11 @@
 # @lecstor/ui-react
 
+## 0.1.6
+
+### Patch Changes
+
+- 62e7fd6: a couple of small types improvements
+
 ## 0.1.5
 
 ### Patch Changes
